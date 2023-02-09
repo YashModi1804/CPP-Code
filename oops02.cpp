@@ -25,6 +25,11 @@ class student{
     ~student(){
         cout<<"destructur"<<endl;
     }
+    bool operator == (student &b){
+        if(name==b.name && age==b.age && gender==b.gender){
+            return true;
+        }
+    }
     
    
     void setname(string s){
@@ -45,7 +50,7 @@ int main(){
     student b("yash",18,0);//deafult constructor eg
     student c=b;//copy constructor eg
     student d;
-    if(c==b){
+    if(c==b){//here we have to define what == operator means know as operator overloading where operator will behave on our wish
         cout<<"same";
     }
     else{
